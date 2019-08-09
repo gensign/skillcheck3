@@ -5,16 +5,27 @@ const session = require('express-session')
 const massive = require('massive')
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const PORT = SERVER_PORT || 4444
+const authCtrl = require('./controllers/authControl')
+const postCtrl = require('./controllers/postsControl')
 
 // Middleware
 app.use(express.json())
-// Sessions
 
+// Sessions
+app.use(session({
+    secret: SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        maxAge: 1000 * 60 * 60 * 24 * 10
+    }
+}))
 
 // END POINTS AUTH
 
 
 // END POINTS POSTS
+
 
 // Massive
 massive(CONNECTION_STRING).then(db => {
