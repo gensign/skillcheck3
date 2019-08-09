@@ -22,7 +22,7 @@ app.use(session({
 }))
 
 // END POINTS AUTH
-// app.post('/api/auth/login', authCtrl.login)
+app.post('/api/auth/login', authCtrl.login)
 app.post('/api/auth/register', authCtrl.register)
 
 // END POINTS POSTS
