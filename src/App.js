@@ -9,7 +9,7 @@ function App(props) {
   return (
     <div className="App">
       {
-       props.location.pathname == "/" ? (
+       props.location.pathname === "/" ? (
           <div>
             {routes} </div>) : (
             <div>

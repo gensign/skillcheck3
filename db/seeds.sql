@@ -14,6 +14,8 @@ CREATE TABLE helo_posts (
   author_id INTEGER REFERENCES helo_users(user_id)
 );
 
+CREATE TABLE helo_credentials (user_id INTEGER, hash TEXT);
+
 -- dummy data
 INSERT INTO helo_users (username, password, profile_pic)
 VALUES ('Grizzly', 'sweet', 'https://upload.wikimedia.org/wikipedia/commons/7/71/2010-kodiak-bear-1.jpg'),

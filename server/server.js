@@ -22,10 +22,13 @@ app.use(session({
 }))
 
 // END POINTS AUTH
-
+app.post('/api/auth/login', authCtrl.login)
+app.post('/api/auth/register', authCtrl.register)
 
 // END POINTS POSTS
-
+app.get('/api/post/:userid', postCtrl.getUser)
+app.get('/api/post/:postid', postCtrl.getPost)
+app.post('/api/post/:userid', postCtrl.addPost)
 
 // Massive
 massive(CONNECTION_STRING).then(db => {
