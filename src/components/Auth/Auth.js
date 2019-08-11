@@ -16,9 +16,10 @@ class Auth extends Component {
         })
     }
 
-    login() {
+    login = () => {
         const { username, password } = this.state
         console.log(username)
+        // currently only sending the catch err. 
         axios.post('/api.auth/login', { username, password })
             .then(res => {
                 this.props.setUser({ username, password })

@@ -25,7 +25,7 @@ module.exports = {
             }).catch(err => {
                 res.status(500).send({ message: 'Failed to register' })
             })
-        // When has doens't use this code
+        // When has doesn't use this code
         // res.status(200).send({ Register: true })
 
     },
