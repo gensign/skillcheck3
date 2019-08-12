@@ -26,7 +26,7 @@ app.post('/api/auth/login', authCtrl.login)
 app.post('/api/auth/register', authCtrl.register)
 
 // END POINTS POSTS
-app.get('/api/post/:userid', postCtrl.getUser)
+app.get('/api/post/:user_id', postCtrl.getUser)
 // app.get('/api/post/:postid', postCtrl.getPosts)
 // app.post('/api/post/:userid', postCtrl.addPost)
 
