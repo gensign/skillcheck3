@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Posts from '../Post/Post'
+import axios from 'axios'
 
 export default class Dashboard extends Component {
     state = {
@@ -12,24 +12,30 @@ export default class Dashboard extends Component {
 
     handleChange(e, key) {
         this.setState({
-          [key]: e.target.value   
+            [key]: e.target.value
         })
     }
 
-    // getAllPosts(){}
-
-    // searchPosts(){}
+    searchPosts() {
+        
+    }
 
     // userOnlyPosts(){}
-    
+
+    // allPosts(){}
+
     render() {
         return (
             <div>
-                <h1>Dashboard</h1>
-                <input onChange={e => this.handleChange(e,'search')} placeholder="search" />
-                <button onClick={this.searchPosts}>Search</button>
-                <button>Reset</button>
-                <h4>CheckboxCommingSoon</h4>
+                <div>
+                    <h1>Dashboard</h1>
+                    <input onChange={e => this.handleChange(e, 'search')} placeholder="Search By Title" />
+                    <button onClick={this.searchPosts}>Search</button>
+                    <button>Reset</button>
+                    <h4>CheckboxCommingSoon</h4>
+                </div>
+                <div>
+                </div>
             </div>
         )
     }

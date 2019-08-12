@@ -4,7 +4,11 @@ module.exports = {
     register: async (req, res) => {
         const db = req.app.get('db')
         const { user_id, username, password, profile_pic } = req.body
+        console.log("username: ", username)
+        console.log('')
         const user = await db.find_user([username])
+        console.log("user: ", user)
+        console.log('')
         if (user.length > 0) {
             return res.status(400).send({ Register: false })
         }
@@ -13,6 +17,8 @@ module.exports = {
         const salt = bcrypt.genSaltSync(10)
         const hash = bcrypt.hashSync(password, salt)
         const newUser = await db.insert_helo_user(username, password, profile_pic)
+        console.log('newUser: ', newUser)
+        console.log('')
         // setting up hash
         db.insert_hash({ hash, user_id: newUser[0].user_id })
             .then(() => {
@@ -31,8 +37,11 @@ module.exports = {
     },
     login: async (req, res) => {
         const db = req.app.get('db')
-        const { username, password } = req.body
+        const { user_id, username, password } = req.body
+        console.log('username: ', username, password)
+        console.log('')
         const user = await db.find_user([username, password])
+        console.log('user: ', user)
         if (user.length > 0) {
             res.status(200).send({ logIn: true })
         } else {

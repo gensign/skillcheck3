@@ -10,10 +10,11 @@ export default class Post extends Component {
         authorPicture: ''
     }
 
-    // getPostInfo(){
+    // getPosts(){
     //     axios.get('').then( res =>
     //     ).catch(err => alert('Unable to connect to Database'))
     // }
+
     
     render() {
         return (
