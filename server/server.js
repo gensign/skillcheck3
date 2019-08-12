@@ -6,7 +6,7 @@ const massive = require('massive')
 const { SERVER_PORT, CONNECTION_STRING, SESSION_SECRET } = process.env
 const PORT = SERVER_PORT || 4444
 const authCtrl = require('./controllers/authControl')
-// const postCtrl = require('./controllers/postsControl')
+const postCtrl = require('./controllers/postsControl')
 
 // Middleware
 app.use(express.json())
@@ -26,8 +26,8 @@ app.post('/api/auth/login', authCtrl.login)
 app.post('/api/auth/register', authCtrl.register)
 
 // END POINTS POSTS
-// app.get('/api/post/:userid', postCtrl.getUser)
-// app.get('/api/post/:postid', postCtrl.getPost)
+app.get('/api/post/:userid', postCtrl.getUser)
+// app.get('/api/post/:postid', postCtrl.getPosts)
 // app.post('/api/post/:userid', postCtrl.addPost)
 
 // Massive

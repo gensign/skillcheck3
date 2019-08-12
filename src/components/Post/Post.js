@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 export default class Post extends Component {
     state = {
@@ -9,7 +10,10 @@ export default class Post extends Component {
         authorPicture: ''
     }
 
-    getPostInfo(){}
+    // getPostInfo(){
+    //     axios.get('').then( res =>
+    //     ).catch(err => alert('Unable to connect to Database'))
+    // }
     
     render() {
         return (
